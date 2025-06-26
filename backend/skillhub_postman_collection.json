@@ -1,0 +1,81 @@
+{
+    "info": {
+      "_postman_id": "12345678-aaaa-bbbb-cccc-ddddeeeeffff",
+      "name": "SkillHub API",
+      "description": "Postman collection for testing SkillHub freelance platform backend",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Signup",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "url": {
+            "raw": "http://localhost:5000/signup",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["signup"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"new@example.com\",\n  \"password\": \"newpass123\",\n  \"role\": \"freelancer\"\n}"
+          }
+        }
+      },
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "url": {
+            "raw": "http://localhost:5000/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"client1@example.com\",\n  \"password\": \"clientpass\"\n}"
+          }
+        }
+      },
+      {
+        "name": "Get All Services",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:5000/services",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["services"]
+          }
+        }
+      },
+      {
+        "name": "Post New Service",
+        "request": {
+          "method": "POST",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" },
+            { "key": "Authorization", "value": "Bearer <your_token_here>" }
+          ],
+          "url": {
+            "raw": "http://localhost:5000/services",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["services"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"title\": \"Design Logo\",\n  \"description\": \"Need a modern logo.\",\n  \"budget\": 150,\n  \"category_ids\": [1],\n  \"client_id\": 1\n}"
+          }
+        }
+      }
+    ]
+  }
+  
